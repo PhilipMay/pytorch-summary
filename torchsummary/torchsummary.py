@@ -23,6 +23,7 @@ def summary_string(model, input_size, batch_size=-1, device=torch.device('cuda:0
     def register_hook(module):
         def hook(module, input, output):
             print(type(output))
+            print(output)
             output = output['linear']
             print(type(output))
             class_name = str(module.__class__).split(".")[-1].split("'")[0]
